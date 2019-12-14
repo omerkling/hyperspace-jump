@@ -197,7 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52a7f529daf256439bcec7e48e8898a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zSpeed: 6.5
   jumpPower: 4.2
 --- !u!1 &444349845
 GameObject:
@@ -551,7 +550,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2294765746602751335, guid: a6def198ef6f43c478d69e62b57b787a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a6def198ef6f43c478d69e62b57b787a, type: 3}
 --- !u!1001 &7679506221901148426
 PrefabInstance:
@@ -708,6 +708,16 @@ PrefabInstance:
         type: 3}
       propertyPath: rotationSpeed
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959949040515486618, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959949040515486618, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.82
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a04a61ce095125948b77564f4d9a1172, type: 3}
