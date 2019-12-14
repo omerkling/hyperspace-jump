@@ -7,7 +7,7 @@ public class Spaceship : MonoBehaviour
 {
     private Rigidbody myBody; 
     private Vector3 speed;
-    public float zSpeed = 5f;
+    public float zSpeed = 6.5f;
     public float jumpPower = 4.2f;
     private bool isGrounded;
 
