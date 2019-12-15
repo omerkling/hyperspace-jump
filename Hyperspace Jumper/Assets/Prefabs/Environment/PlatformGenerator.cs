@@ -2,14 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlatformGenerator : MonoBehaviour {
     private GameObject lastPlatform;
     private TunnelMovement tunnelMover;
     public float spawnPointZ = 500;
-    public float gapSize = 3;
+    public float minGap = 2;
+    public float maxGap = 5;
     public float gapAngle = 45;
-    public float defaultSize = 5;
+    public float minSize = 3;
+    public float maxSize = 7;
 
     // Start is called before the first frame update
     void Start() {
@@ -22,8 +25,10 @@ public class PlatformGenerator : MonoBehaviour {
         float furthestZ = (lastPlatform.transform.localScale.z / 2f) + lastPlatform.transform.localPosition.z;
         if (furthestZ < spawnPointZ) {
             GameObject newPlatform = tunnelMover.GetPlatform();
-            SizePlatform(newPlatform, defaultSize);
-            PositionPlatform(newPlatform, furthestZ + gapSize, gapAngle);
+            SizePlatform(newPlatform, Random.Range(minSize, maxSize));
+            PositionPlatform(newPlatform,
+                furthestZ + Random.Range(minGap, maxGap),
+                Random.Range(-gapAngle, gapAngle));
             lastPlatform = newPlatform;
         }
     }
