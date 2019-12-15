@@ -20,12 +20,10 @@ public class TunnelMovement : MonoBehaviour
     }
 
     internal void RotateClockwise() {
-        print("clockwise");
         transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime);
     }
 
     internal void RotateCounterClockwise() {
-        print("counter clockwise");
         transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
 }

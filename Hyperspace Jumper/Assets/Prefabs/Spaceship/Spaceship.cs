@@ -12,13 +12,22 @@ public class Spaceship : MonoBehaviour
     // Start is called before the first frame update
     void Start() {        
         myBody = GetComponent<Rigidbody>();
-    }    
+    }
 
-    private void OnCollisionStay(Collision collision) {
+    void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == Tags.GROUND) {
             isGrounded = true;
-        } else {
+        }
+    }
+    void OnCollisionExit(Collision collision) {
+        if (collision.gameObject.tag == Tags.GROUND) {
             isGrounded = false;
+        }
+    }
+
+    void OnCollisionStay(Collision collision) {
+        if (collision.gameObject.tag == Tags.GROUND) {
+            isGrounded = true;
         }
     }
 
