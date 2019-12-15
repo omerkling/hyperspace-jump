@@ -8,8 +8,9 @@ public class PlatformGenerator : MonoBehaviour {
     public GameObject startingPlatform;
     private GameObject lastPlatform;
     private float tunnelRadius;
-    public float spawnPointZ = 65;
+    public float spawnPointZ = 500;
     public float gapSize = 3;
+    public float gapAngle = 45;
     public float defaultSize = 5;
 
     // Start is called before the first frame update
@@ -24,7 +25,7 @@ public class PlatformGenerator : MonoBehaviour {
         if (furthestZ < spawnPointZ) {
             GameObject newPlatform = Instantiate(platformPrefab, gameObject.transform);
             SizePlatform(newPlatform, defaultSize);
-            PositionPlatform(newPlatform, furthestZ + gapSize);
+            PositionPlatform(newPlatform, furthestZ + gapSize, gapAngle);
             lastPlatform = newPlatform;
         }
     }
@@ -35,9 +36,12 @@ public class PlatformGenerator : MonoBehaviour {
         platform.transform.localScale = scale;
     }
 
-    private void PositionPlatform(GameObject platform, float startZ) {
+    private void PositionPlatform(GameObject platform, float startZ, float angle) {
         Vector3 position = lastPlatform.transform.localPosition;
         position.z = startZ + (platform.transform.localScale.z / 2f);
         platform.transform.localPosition = position;
+        platform.transform.localRotation = lastPlatform.transform.localRotation;
+
+        platform.transform.RotateAround(gameObject.transform.position, Vector3.forward, angle);
     }
 }

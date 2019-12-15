@@ -435,7 +435,7 @@ PrefabInstance:
     - target: {fileID: 2294765746602751329, guid: a6def198ef6f43c478d69e62b57b787a,
         type: 3}
       propertyPath: far clip plane
-      value: 60
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2294765746602751335, guid: a6def198ef6f43c478d69e62b57b787a,
         type: 3}
@@ -526,6 +526,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: spawnPointZ
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a04a61ce095125948b77564f4d9a1172, type: 3}
