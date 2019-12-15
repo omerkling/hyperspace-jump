@@ -45,8 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7896718044ab8b24eaa07716f6fe7689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformPrefab: {fileID: 2948384463970471168, guid: d9eca79ce470b544596d9462a5d7bc20,
+    type: 3}
+  startPlatform: {fileID: 3497404970101627430}
   rotationSpeed: 90
   speed: 6.5
+  destroyZ: 30
 --- !u!114 &3497404969449722099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,11 +63,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b8cfa43baf8ac4289d228ce5d7d5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformPrefab: {fileID: 2948384463970471168, guid: d9eca79ce470b544596d9462a5d7bc20,
-    type: 3}
-  startingPlatform: {fileID: 3497404970101627430}
-  spawnPointZ: 65
+  spawnPointZ: 500
   gapSize: 3
+  gapAngle: 45
   defaultSize: 5
 --- !u!1001 &1757392617125599014
 PrefabInstance:

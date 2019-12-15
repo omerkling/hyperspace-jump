@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour {
-    public GameObject platformPrefab;
-    public GameObject startingPlatform;
     private GameObject lastPlatform;
-    private float tunnelRadius;
+    private TunnelMovement tunnelMover;
     public float spawnPointZ = 500;
     public float gapSize = 3;
     public float gapAngle = 45;
@@ -15,15 +13,15 @@ public class PlatformGenerator : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        tunnelRadius = startingPlatform.transform.localPosition.y;
-        lastPlatform = startingPlatform;
+        tunnelMover = GetComponent<TunnelMovement>();
+        lastPlatform = tunnelMover.startPlatform;
     }
 
     // Update is called once per frame
     void Update() {
         float furthestZ = (lastPlatform.transform.localScale.z / 2f) + lastPlatform.transform.localPosition.z;
         if (furthestZ < spawnPointZ) {
-            GameObject newPlatform = Instantiate(platformPrefab, gameObject.transform);
+            GameObject newPlatform = tunnelMover.GetPlatform();
             SizePlatform(newPlatform, defaultSize);
             PositionPlatform(newPlatform, furthestZ + gapSize, gapAngle);
             lastPlatform = newPlatform;
@@ -41,7 +39,6 @@ public class PlatformGenerator : MonoBehaviour {
         position.z = startZ + (platform.transform.localScale.z / 2f);
         platform.transform.localPosition = position;
         platform.transform.localRotation = lastPlatform.transform.localRotation;
-
         platform.transform.RotateAround(gameObject.transform.position, Vector3.forward, angle);
     }
 }
