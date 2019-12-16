@@ -8,20 +8,32 @@ public class Spaceship : MonoBehaviour {
     private Rigidbody myBody; 
     public float jumpPower = 4.2f;
     private bool isGrounded;
+    private bool nearGround;
+    private bool jumpWhenGrounded;
 
     // Start is called before the first frame update
     void Start() {        
         myBody = GetComponent<Rigidbody>();
     }
 
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == Tags.GROUND) {
+            nearGround = true;
+        }
+    }
+
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == Tags.GROUND) {
             isGrounded = true;
+            if (jumpWhenGrounded) {
+                Jump();
+            }
         }
     }
     void OnCollisionExit(Collision collision) {
         if (collision.gameObject.tag == Tags.GROUND) {
             isGrounded = false;
+            nearGround = false;
         }
     }
 
@@ -33,8 +45,12 @@ public class Spaceship : MonoBehaviour {
 
     public void Jump() {
         if (isGrounded) {
-            myBody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);        
+            myBody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
             isGrounded = false;
+            nearGround = false;
+            jumpWhenGrounded = false;
+        } else if (nearGround) {
+            jumpWhenGrounded = true;
         }
     }
 
