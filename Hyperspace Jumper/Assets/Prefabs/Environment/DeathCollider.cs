@@ -6,6 +6,7 @@ public class DeathCollider : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         // TODO: Trigger explosion and reset or game over
-        Time.timeScale = 0f;
+        collision.gameObject.GetComponent<Spaceship>().Explode();
+        //Time.timeScale = 0f;
     }
 }

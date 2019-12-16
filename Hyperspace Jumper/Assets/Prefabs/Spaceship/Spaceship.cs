@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spaceship : MonoBehaviour
-{
+public class Spaceship : MonoBehaviour {
+    public GameObject explosionPrefab;
     private Rigidbody myBody; 
     public float jumpPower = 4.2f;
     private bool isGrounded;
@@ -36,5 +36,10 @@ public class Spaceship : MonoBehaviour
             myBody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);        
             isGrounded = false;
         }
+    }
+
+    public void Explode() {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        gameObject.SetActive(false);
     }
 }
