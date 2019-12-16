@@ -64,9 +64,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPointZ: 500
-  gapSize: 3
+  minGap: 2
+  maxGap: 5
   gapAngle: 45
-  defaultSize: 5
+  minSize: 3
+  maxSize: 7
 --- !u!1001 &1757392617125599014
 PrefabInstance:
   m_ObjectHideFlags: 0
