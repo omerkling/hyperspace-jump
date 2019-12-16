@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 9134151650368301135, guid: 0780021cbeb39aa4a9b7fc547f410634,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.5
+      value: -15.48
       objectReference: {fileID: 0}
     - target: {fileID: 9134151650368301135, guid: 0780021cbeb39aa4a9b7fc547f410634,
         type: 3}
@@ -243,6 +243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134151650368301135, guid: 0780021cbeb39aa4a9b7fc547f410634,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.7268
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0780021cbeb39aa4a9b7fc547f410634, type: 3}
@@ -516,7 +521,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
