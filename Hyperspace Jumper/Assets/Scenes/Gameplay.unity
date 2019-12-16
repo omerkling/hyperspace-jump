@@ -139,6 +139,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07, y: 0.33, z: 0.19}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &378417411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 378417411, guid: 1742bc42ee0fcb246bbed9155840a700,
+    type: 3}
+  m_PrefabInstance: {fileID: 7679506221901148426}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378417407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52a7f529daf256439bcec7e48e8898a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &444349845
 GameObject:
   m_ObjectHideFlags: 0
@@ -5303,6 +5315,16 @@ PrefabInstance:
       propertyPath: gapAngle
       value: 82.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: spaceShip
+      value: 
+      objectReference: {fileID: 378417411}
+    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: spaceship
+      value: 
+      objectReference: {fileID: 378417411}
     - target: {fileID: 3497404970101627430, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: m_IsActive

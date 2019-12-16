@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class PlatformGenerator : MonoBehaviour {
     private GameObject lastPlatform;
     private TunnelMovement tunnelMover;
+    public Spaceship spaceship;
     public float spawnPointZ = 500;
     public float minGap = 2;
     public float maxGap = 5;
@@ -25,9 +26,20 @@ public class PlatformGenerator : MonoBehaviour {
         float furthestZ = (lastPlatform.transform.localScale.z / 2f) + lastPlatform.transform.localPosition.z;
         if (furthestZ < spawnPointZ) {
             GameObject newPlatform = tunnelMover.GetPlatform();
-            SizePlatform(newPlatform, Random.Range(minSize, maxSize));
+
+            float t = Math.Abs((2 * spaceship.jumpPower) / Physics.gravity.y);
+            float jumpDistance = t * tunnelMover.speed;
+            // The gap can be less than jumpDistance, but should never be more
+            float gap = Random.Range(Math.Min(minGap, jumpDistance), Math.Min(jumpDistance, maxGap));
+            // If the player jumps at the very end of the previous platform, they should always be able
+            // to land on the next platform
+            float effectiveMinPlatformSize = Math.Max(minSize, jumpDistance - gap);
+            float effectiveMaxPlatformSize = Math.Max(maxSize, effectiveMinPlatformSize);
+            float size = Random.Range(effectiveMinPlatformSize, effectiveMaxPlatformSize);
+
+            SizePlatform(newPlatform, size);
             PositionPlatform(newPlatform,
-                furthestZ + Random.Range(minGap, maxGap),
+                furthestZ + gap,
                 Random.Range(-gapAngle, gapAngle));
             lastPlatform = newPlatform;
         }
