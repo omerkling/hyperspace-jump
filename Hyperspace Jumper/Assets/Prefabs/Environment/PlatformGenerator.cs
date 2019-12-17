@@ -11,7 +11,8 @@ public class PlatformGenerator : MonoBehaviour {
     public float spawnPointZ = 500;
     public float minGap = 2;
     public float maxGap = 5;
-    public float gapAngle = 45;
+    public float maxGapAngle = 90;
+    public float minGapAngle = 45;
     public float minSize = 3;
     public float maxSize = 7;
 
@@ -36,11 +37,11 @@ public class PlatformGenerator : MonoBehaviour {
             float effectiveMinPlatformSize = Math.Max(minSize, jumpDistance - gap);
             float effectiveMaxPlatformSize = Math.Max(maxSize, effectiveMinPlatformSize);
             float size = Random.Range(effectiveMinPlatformSize, effectiveMaxPlatformSize);
+            float gapAngleSelector = Random.Range(-1f, 1f) * (maxGapAngle - minGapAngle);
+            float gapAngle = gapAngleSelector < 0 ? gapAngleSelector - minGapAngle : gapAngleSelector + minGapAngle;
 
             SizePlatform(newPlatform, size);
-            PositionPlatform(newPlatform,
-                furthestZ + gap,
-                Random.Range(-gapAngle, gapAngle));
+            PositionPlatform(newPlatform, furthestZ + gap, gapAngle);
             lastPlatform = newPlatform;
         }
     }
