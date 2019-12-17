@@ -5313,7 +5313,7 @@ PrefabInstance:
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: gapAngle
-      value: 59.43
+      value: 82.3
       objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
@@ -5325,16 +5325,6 @@ PrefabInstance:
       propertyPath: spaceship
       value: 
       objectReference: {fileID: 378417411}
-    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
-        type: 3}
-      propertyPath: maxGapAngle
-      value: 95
-      objectReference: {fileID: 0}
-    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
-        type: 3}
-      propertyPath: minGapAngle
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 3497404970101627430, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: m_IsActive
