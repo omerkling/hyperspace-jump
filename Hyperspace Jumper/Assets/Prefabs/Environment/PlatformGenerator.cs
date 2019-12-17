@@ -37,10 +37,13 @@ public class PlatformGenerator : MonoBehaviour {
             float effectiveMaxPlatformSize = Math.Max(maxSize, effectiveMinPlatformSize);
             float size = Random.Range(effectiveMinPlatformSize, effectiveMaxPlatformSize);
 
+            // Prevent platforms from being placed furthur around then tunnel than is reachable.
+            float effectiveMaxAngle = Math.Min(gapAngle, t * tunnelMover.rotationSpeed);
+
             SizePlatform(newPlatform, size);
             PositionPlatform(newPlatform,
                 furthestZ + gap,
-                Random.Range(-gapAngle, gapAngle));
+                Random.Range(-effectiveMaxAngle, effectiveMaxAngle));
             lastPlatform = newPlatform;
         }
     }

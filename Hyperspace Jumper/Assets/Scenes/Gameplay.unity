@@ -5313,7 +5313,7 @@ PrefabInstance:
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: gapAngle
-      value: 82.3
+      value: 81.2
       objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
