@@ -11,9 +11,11 @@ public class PlatformGenerator : MonoBehaviour {
     public float spawnPointZ = 500;
     public float minGap = 2;
     public float maxGap = 5;
+    public float gapMargin = 0.01f;
     public float gapAngle = 45;
     public float minSize = 3;
     public float maxSize = 7;
+    public float sizeMargin = 0.2f;    
 
     // Start is called before the first frame update
     void Start() {
@@ -30,10 +32,10 @@ public class PlatformGenerator : MonoBehaviour {
             float t = Math.Abs((2 * spaceship.jumpPower) / Physics.gravity.y);
             float jumpDistance = t * tunnelMover.speed;
             // The gap can be less than jumpDistance, but should never be more
-            float gap = Random.Range(Math.Min(minGap, jumpDistance), Math.Min(jumpDistance, maxGap));
+            float gap = Random.Range(Math.Min(minGap, jumpDistance), Math.Min(jumpDistance - gapMargin, maxGap));
             // If the player jumps at the very end of the previous platform, they should always be able
             // to land on the next platform
-            float effectiveMinPlatformSize = Math.Max(minSize, jumpDistance - gap);
+            float effectiveMinPlatformSize = Math.Max(minSize, jumpDistance - gap + sizeMargin);
             float effectiveMaxPlatformSize = Math.Max(maxSize, effectiveMinPlatformSize);
             float size = Random.Range(effectiveMinPlatformSize, effectiveMaxPlatformSize);
 
