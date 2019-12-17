@@ -11,6 +11,9 @@ public class Spaceship : MonoBehaviour {
     private bool nearGround;
     private bool jumpWhenGrounded;
 
+    public int jumpCount { get; private set; }
+
+
     // Start is called before the first frame update
     void Start() {        
         myBody = GetComponent<Rigidbody>();
@@ -46,6 +49,7 @@ public class Spaceship : MonoBehaviour {
     public void Jump() {
         if (isGrounded) {
             myBody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            jumpCount++;
             isGrounded = false;
             nearGround = false;
             jumpWhenGrounded = false;
