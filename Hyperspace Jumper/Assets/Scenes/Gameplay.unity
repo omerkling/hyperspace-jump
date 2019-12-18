@@ -349,7 +349,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: NaN, y: 1.054e-42, z: NaN, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5343,7 +5343,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840581521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -64}
+  m_LocalPosition: {x: 0, y: 0, z: -63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590227091}
@@ -5351,8 +5351,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 103, y: -61}
-  m_SizeDelta: {x: 163.06, y: 88.5}
+  m_AnchoredPosition: {x: 135, y: -61}
+  m_SizeDelta: {x: 201, y: 44.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840581523
 MonoBehaviour:
@@ -5582,6 +5582,11 @@ PrefabInstance:
       propertyPath: spaceship
       value: 
       objectReference: {fileID: 378417411}
+    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: gapMargin
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3497404970101627430, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: m_IsActive
