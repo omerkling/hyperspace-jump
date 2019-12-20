@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class DeathCollider : MonoBehaviour {
 
-    private void OnCollisionEnter(Collision collision) {
-        // TODO: Trigger explosion and reset or game over
+    public Controls controls;
+
+    private void OnCollisionEnter(Collision collision) {        
         collision.gameObject.GetComponent<Spaceship>().Explode();
-        //Time.timeScale = 0f;
+        controls.ShowRestart();
     }
 }
