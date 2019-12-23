@@ -23,11 +23,15 @@ public class Controls : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) {
+            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
             spaceship.GetComponent<Spaceship>().Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.Return)) {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
             if (canRestart) {
                 Restart();
             }
