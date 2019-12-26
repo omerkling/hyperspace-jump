@@ -5763,35 +5763,15 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 81.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+    - target: {fileID: 5970208676099027195, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
-      propertyPath: spawnPointZ
-      value: 92.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+      propertyPath: spaceship
+      value: 
+      objectReference: {fileID: 378417411}
+    - target: {fileID: 5970208676099027195, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
-      propertyPath: minGap
-      value: 4.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
-        type: 3}
-      propertyPath: maxGap
-      value: 7.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
-        type: 3}
-      propertyPath: minSize
-      value: 2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
-        type: 3}
-      propertyPath: maxSize
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
-        type: 3}
-      propertyPath: gapAngle
-      value: 81.2
+      propertyPath: platformsPerLevel
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
@@ -5805,8 +5785,28 @@ PrefabInstance:
       objectReference: {fileID: 378417411}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
+      propertyPath: minGap
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: minSize
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: maxSize
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: sizeMargin
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
       propertyPath: gapMargin
-      value: 0.15
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3497404970101627430, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
@@ -5836,6 +5836,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spaceship
+      objectReference: {fileID: 0}
+    - target: {fileID: 378417411, guid: 1742bc42ee0fcb246bbed9155840a700, type: 3}
+      propertyPath: jumpPower
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7679506221524566026, guid: 1742bc42ee0fcb246bbed9155840a700,
         type: 3}
@@ -5891,10 +5895,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 378417411, guid: 1742bc42ee0fcb246bbed9155840a700, type: 3}
-      propertyPath: jumpPower
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1742bc42ee0fcb246bbed9155840a700, type: 3}

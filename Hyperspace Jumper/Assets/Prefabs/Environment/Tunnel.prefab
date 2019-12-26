@@ -48,9 +48,12 @@ MonoBehaviour:
   platformPrefab: {fileID: 2948384463970471168, guid: d9eca79ce470b544596d9462a5d7bc20,
     type: 3}
   startPlatform: {fileID: 3497404970101627430}
+  spaceship: {fileID: 0}
   rotationSpeed: 90
   speed: 6.5
   destroyZ: 30
+  speedMultiplier: 1.5
+  platformsPerLevel: 10
 --- !u!114 &3497404969449722099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,12 +66,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b8cfa43baf8ac4289d228ce5d7d5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPointZ: 500
-  minGap: 2
-  maxGap: 5
-  gapAngle: 45
-  minSize: 3
-  maxSize: 7
+  spaceship: {fileID: 0}
+  spawnPointZ: 92.2
+  minGap: 0.2
+  maxGap: 1
+  gapMargin: 0.15
+  gapAngle: 81.2
+  minSize: 2.3
+  maxSize: 6
+  sizeMargin: 0.2
 --- !u!1001 &1757392617125599014
 PrefabInstance:
   m_ObjectHideFlags: 0

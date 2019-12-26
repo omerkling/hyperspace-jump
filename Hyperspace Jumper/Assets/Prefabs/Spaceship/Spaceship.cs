@@ -28,6 +28,11 @@ public class Spaceship : MonoBehaviour {
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == Tags.GROUND) {
             isGrounded = true;
+            PlatformState platformState = collision.gameObject.GetComponent<PlatformState>();
+            if (platformState != null && platformState.canScore) {
+                jumpCount++;
+                platformState.canScore = false;
+            }
             if (jumpWhenGrounded) {
                 Jump();
             }
@@ -49,7 +54,6 @@ public class Spaceship : MonoBehaviour {
     public void Jump() {
         if (isGrounded) {
             myBody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-            jumpCount++;
             isGrounded = false;
             nearGround = false;
             jumpWhenGrounded = false;
