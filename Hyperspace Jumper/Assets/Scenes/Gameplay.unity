@@ -5751,12 +5751,12 @@ PrefabInstance:
     - target: {fileID: 5970208676099027195, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: destroyZ
-      value: -100.7
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5970208676099027195, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: speed
-      value: 9.8
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5970208676099027195, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
@@ -5773,6 +5773,11 @@ PrefabInstance:
       propertyPath: platformsPerLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5970208676099027195, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: speedMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: spaceShip
@@ -5786,7 +5791,7 @@ PrefabInstance:
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: minGap
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
@@ -5796,17 +5801,17 @@ PrefabInstance:
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: maxSize
-      value: 0.8
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: sizeMargin
-      value: 0.05
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: gapMargin
-      value: 0.02
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 3497404970101627430, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}

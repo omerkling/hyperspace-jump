@@ -10,7 +10,7 @@ public class TunnelMovement : MonoBehaviour {
     public float rotationSpeed = 45f;
     public float speed = 6.5f;
     public float destroyZ = -30f;
-    public float speedMultiplier = 1.5f;
+    public float speedIncrement = 1.5f;
     public float platformsPerLevel = 10f;
 
     Queue<GameObject> platformPool = new Queue<GameObject>();
@@ -23,10 +23,11 @@ public class TunnelMovement : MonoBehaviour {
         
     void FixedUpdate() {
         float moveSpeed = SpeedForScore(spaceship.jumpCount);
+        print("Speed " + moveSpeed);
         for (int i = activePlatforms.Count - 1; i > -1; i--) {
             GameObject platform = activePlatforms[i];
             platform.transform.position = platform.transform.position + Vector3.back * moveSpeed * Time.deltaTime;
-            if (platform.transform.position.z < destroyZ) {
+            if ((platform.transform.position.z + platform.transform.localScale.z) < destroyZ) {
                 platform.SetActive(false);
                 activePlatforms.RemoveAt(i);
                 platformPool.Enqueue(platform);
@@ -51,6 +52,6 @@ public class TunnelMovement : MonoBehaviour {
     }
 
     public float SpeedForScore(int score) {
-        return (float)(speed * Math.Max(1.0f, Math.Floor(score / platformsPerLevel) * speedMultiplier));
+        return (float)(speed + (Math.Floor(score / platformsPerLevel) * speedIncrement));
     }
 }
