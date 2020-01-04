@@ -9,19 +9,24 @@ public class PlatformGenerator : MonoBehaviour {
     private TunnelMovement tunnelMover;
     public Spaceship spaceship;
     public float spawnPointZ = 92.2f;
-    public float minGap = 0.2f;
-    public float maxGap = 1f;
-    public float gapMargin = 0.15f;
+    public float minGap = 0.6f;
+    public float gapMargin = 4f;
     public float gapAngle = 81.2f;
-    public float minSize = 0.5f;
-    public float maxSize = 6;
-    public float sizeMargin = 0.2f;
+    public float minSize = 0.0f;
+    public float maxSize = 1f;
+    public float sizeMargin = 1.5f;
     private int platformCount = 0;
 
     // Start is called before the first frame update
     void Start() {
         tunnelMover = GetComponent<TunnelMovement>();
         lastPlatform = tunnelMover.startPlatform;
+
+        // Ensure the start platform is always 3 seconds long
+        float startPosition = lastPlatform.transform.position.z - lastPlatform.transform.localScale.z / 2f;
+        float size = tunnelMover.speed * 3f;
+        SizePlatform(lastPlatform, size);
+        PositionPlatform(lastPlatform, startPosition, 0);
     }
 
     // Update is called once per frame
@@ -31,15 +36,16 @@ public class PlatformGenerator : MonoBehaviour {
 
             platformCount++;
             GameObject newPlatform = tunnelMover.GetPlatform();
-            float t = Math.Abs((2 * spaceship.jumpPower) / Physics.gravity.y);
-            float jumpDistance = t * tunnelMover.SpeedForScore(platformCount - 1);
+            float t = spaceship.HangTime();
+            float platformSpeed = tunnelMover.SpeedForScore(platformCount - 1);
+            float jumpDistance = t * platformSpeed;
             // The gap can be less than jumpDistance, but should never be more
-            float effectiveMaxGap = jumpDistance * (maxGap - gapMargin);
+            float effectiveMaxGap = jumpDistance - gapMargin;
             float gap = Random.Range(effectiveMaxGap * minGap, effectiveMaxGap);
             // If the player jumps at the very end of the previous platform, they should always be able
             // to land on the next platform
-            float effectiveMinPlatformSize = Math.Max(jumpDistance * minSize, (jumpDistance - gap) + (jumpDistance * sizeMargin));
-            float effectiveMaxPlatformSize = Math.Max(jumpDistance * maxSize, effectiveMinPlatformSize);
+            float effectiveMinPlatformSize = Math.Max((platformSpeed * minSize) + sizeMargin, (jumpDistance - gap) +  sizeMargin);
+            float effectiveMaxPlatformSize = Math.Max(platformSpeed * maxSize, effectiveMinPlatformSize);
             float size = Random.Range(effectiveMinPlatformSize, effectiveMaxPlatformSize);
 
             // Prevent platforms from being placed furthur around then tunnel than is reachable.

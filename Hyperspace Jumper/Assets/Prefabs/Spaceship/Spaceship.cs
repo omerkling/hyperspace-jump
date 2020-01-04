@@ -38,6 +38,11 @@ public class Spaceship : MonoBehaviour {
             }
         }
     }
+
+    internal float HangTime() {
+        return Math.Abs((2 * jumpPower) / Physics.gravity.y);
+    }
+
     void OnCollisionExit(Collision collision) {
         if (collision.gameObject.tag == Tags.GROUND) {
             isGrounded = false;
