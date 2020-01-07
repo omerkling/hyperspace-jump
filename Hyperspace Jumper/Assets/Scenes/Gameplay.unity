@@ -4948,7 +4948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585148171 stripped
 GameObject:
@@ -5006,7 +5006,7 @@ PrefabInstance:
     - target: {fileID: 9134151650368301135, guid: 0780021cbeb39aa4a9b7fc547f410634,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9134151650368301135, guid: 0780021cbeb39aa4a9b7fc547f410634,
         type: 3}
@@ -5209,7 +5209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -5247,7 +5247,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.05931826, g: 0.14998169, b: 0.2924528, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.08317607, b: 0.21698111, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5292,7 +5292,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 4.4490004, y: 0, z: 0}
 --- !u!1 &1019352113
 GameObject:
@@ -6208,7 +6208,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 6
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10045,7 +10045,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4.222107}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!1 &1590227087
 GameObject:
@@ -10299,12 +10299,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867573698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002908196
 GameObject:
@@ -10484,7 +10484,7 @@ PrefabInstance:
     - target: {fileID: 3497404969449722098, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722098, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
@@ -10531,6 +10531,11 @@ PrefabInstance:
       propertyPath: speedMultiplier
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5970208676099027195, guid: a04a61ce095125948b77564f4d9a1172,
+        type: 3}
+      propertyPath: speedIncrement
+      value: 2.51
+      objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: spaceShip
@@ -10554,7 +10559,7 @@ PrefabInstance:
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
       propertyPath: maxSize
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3497404969449722099, guid: a04a61ce095125948b77564f4d9a1172,
         type: 3}
@@ -10637,7 +10642,7 @@ PrefabInstance:
     - target: {fileID: 7679506221524566026, guid: 1742bc42ee0fcb246bbed9155840a700,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7679506221524566026, guid: 1742bc42ee0fcb246bbed9155840a700,
         type: 3}
